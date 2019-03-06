@@ -3,9 +3,6 @@
 
 # ### Setup
 
-# In[1]:
-
-
 from __future__ import print_function
 
 import math
@@ -33,9 +30,6 @@ data.head()
 
 # ### Defining preprocessing function to format input data
 
-# In[2]:
-
-
 def preprocessFeatures(df, target):
   
   selectedFeatures = df.drop(target, axis=1)
@@ -56,8 +50,6 @@ def preprocessTargetOver(df, target, limit):
 
 
 # ### Preprocessing data to be fed into models and displaying processed dataframes
-
-# In[3]:
 
 
 target = 'median_house_value'
@@ -87,9 +79,6 @@ display.display(validation_targets.describe())
 
 # ### Defining function to construct tensorflow feature columns
 
-# In[4]:
-
-
 def construct_feature_columns(input_features):
   """Construct the TensorFlow Feature Columns.
 
@@ -103,9 +92,6 @@ def construct_feature_columns(input_features):
 
 
 # ### Defining input function
-
-# In[5]:
-
 
 def my_input_fn(features, targets, batch_size=1, shuffle=True, num_epochs=None):
     """Trains a linear regression model.
@@ -137,9 +123,6 @@ def my_input_fn(features, targets, batch_size=1, shuffle=True, num_epochs=None):
 
 
 # ### Defining neural network
-
-# In[6]:
-
 
 def train_nn_regression_model(
     learning_rate,
@@ -247,9 +230,6 @@ def train_nn_regression_model(
 
 
 # ### Training linear classifer (logistic regression) model
-
-# In[7]:
-
 
 dnn_regressor = train_nn_regression_model(
     learning_rate=0.01,
